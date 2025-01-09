@@ -1,12 +1,17 @@
 package main
 
 import (
+	"golang-boilerplate-example/database"
+
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 	// Start a new Fiber App
 	app := fiber.New()
+
+	// Connect to the database
+	database.ConnectDatabase()
 
 
 	// Send string back for GET calls to the endpoint '/'
