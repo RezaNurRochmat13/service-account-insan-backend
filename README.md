@@ -28,6 +28,7 @@ Technology stack goes here.
 - Golang
 - Go Fiber
 - Gorm
+- Godotenv
 - PostgreSQL
 - Docker
 - Docker Compose
@@ -39,8 +40,9 @@ Architecture goes here.
 ```bash
 - config => Config package for environment variables
 - database => Database package for database connection
-- internal => Internal package for application logic
-- router => Router package for API routes
+- module => Module package for application logic
+- routes => Router package for API routes
+- infra => Infrastructure package for Docker and Docker Compose
 ```
 
 ## Contributing
