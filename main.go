@@ -2,6 +2,7 @@ package main
 
 import (
 	"golang-boilerplate-example/database"
+	"golang-boilerplate-example/routes"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -12,6 +13,9 @@ func main() {
 
 	// Connect to the database
 	database.ConnectDatabase()
+
+	// Setup Routes
+	routes.SetupRoutes(app)
 
 
 	// Send string back for GET calls to the endpoint '/'

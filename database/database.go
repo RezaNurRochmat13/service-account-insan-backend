@@ -3,6 +3,7 @@ package database
 import (
 	"fmt"
 	"golang-boilerplate-example/config"
+	noteModel "golang-boilerplate-example/module/note/model"
 	"log"
 	"strconv"
 
@@ -30,4 +31,7 @@ func ConnectDatabase() {
 	}
 
 	fmt.Println("Connection Opened to Database")
+
+	// Migrate the schema
+	DB.AutoMigrate(&noteModel.Note{})
 }
