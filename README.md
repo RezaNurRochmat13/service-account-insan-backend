@@ -42,3 +42,25 @@ Architecture goes here.
 - internal => Internal package for application logic
 - router => Router package for API routes
 ```
+
+## Contributing
+
+Contributing instructions go here.
+
+```bash
+- Fork the repository
+- Create a feature branch
+- Commit your changes
+- Push your branch
+- Submit a pull request
+```
+
+## Author
+
+Author goes here.
+
+- [Reza Nur Rochmat](https://github.com/RezaNurRochmat13)
+
+## License
+
+This project is under the [MIT License](https://opensource.org/licenses/MIT).
