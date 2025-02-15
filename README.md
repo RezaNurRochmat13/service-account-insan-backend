@@ -44,7 +44,6 @@ Architecture goes here.
 - module => Module package for application modules
 - routes => Router package for API routes
 - utils => Utils package for utility functions
-- infra => Infrastructure package for Docker and Docker Compose
 ```
 
 ## Contributing
