@@ -1,5 +1,17 @@
 version: '3.8'
 services:
+  app:
+    image: service-account-insan-backend
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=localhost
+      - DB_NAME=insan-db
+      - DB_USER=insan
+      - DB_PASSWORD=insan
+      - DB_PORT=5432
+
   postgres:
     image: postgres:15
     container_name: my-postgres
