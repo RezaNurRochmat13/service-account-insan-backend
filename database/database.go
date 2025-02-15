@@ -2,8 +2,8 @@ package database
 
 import (
 	"fmt"
-	"golang-boilerplate-example/config"
-	noteModel "golang-boilerplate-example/module/note/model"
+	"insan-service-account-backend/config"
+	accountModel "insan-service-account-backend/module/account/model"
 	"log"
 	"strconv"
 
@@ -33,5 +33,5 @@ func ConnectDatabase() {
 	fmt.Println("Connection Opened to Database")
 
 	// Migrate the schema
-	DB.AutoMigrate(&noteModel.Note{})
+	DB.AutoMigrate(&accountModel.Account{}, &accountModel.User{})
 }

@@ -1,7 +1,7 @@
 package routes
 
 import (
-	noteRoutes "golang-boilerplate-example/module/note/routes"
+	accountRoutes "insan-service-account-backend/module/account/routes"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -9,5 +9,5 @@ import (
 func SetupRoutes(app *fiber.App) {
 	api := app.Group("/api/v1")
 
-	noteRoutes.SetupNoteRoutes(api)
+	accountRoutes.SetupAccountRoutes(api)
 }
