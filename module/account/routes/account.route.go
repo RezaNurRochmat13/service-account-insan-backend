@@ -10,7 +10,7 @@ func SetupAccountRoutes(router fiber.Router) {
 	account := router.Group("/accounts")
 	
 	// Get current balance
-	account.Get("/:id", accountController.GetAccountCurrentBalance)
-	// Create a Account
+	account.Get("/balance/:id", accountController.GetAccountCurrentBalance)
+	// Create a Service Account
 	account.Post("/", accountController.CreateNewAccount)
 }

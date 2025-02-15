@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"insan-service-account-backend/config"
 	accountModel "insan-service-account-backend/module/account/model"
+	userModel "insan-service-account-backend/module/user/model"
 	"log"
 	"strconv"
 
@@ -33,5 +34,5 @@ func ConnectDatabase() {
 	fmt.Println("Connection Opened to Database")
 
 	// Migrate the schema
-	DB.AutoMigrate(&accountModel.Account{}, &accountModel.User{})
+	DB.AutoMigrate(&userModel.User{}, &accountModel.Account{})
 }

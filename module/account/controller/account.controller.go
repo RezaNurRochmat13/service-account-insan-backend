@@ -13,12 +13,10 @@ func GetAccountCurrentBalance(c *fiber.Ctx) error {
     db := database.DB
     var account accountModel.Account
 
-    id := c.Params("id")
+    accountNumber := c.Params("accountNumber")
 
-    db.Find(&account, "id = ?", id)
-
-    if account.ID == uuid.Nil {
-        return c.Status(404).JSON(fiber.Map{"status": "error", "message": "No account present", "data": nil})
+    if err := db.Find(&account, "account_number = ?", accountNumber).Error; err != nil {
+        return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Account not found", "data": err})
     }
 
     return c.JSON(fiber.Map{"status": "success", "message": "Account Found", "data": account})
@@ -29,15 +27,18 @@ func CreateNewAccount(c *fiber.Ctx) error {
     account := new(accountModel.Account)
 
     if err := c.BodyParser(account); err != nil {
-        return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Unable to parse request body", "data": err})
+        return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Unable to create account", "data": err})
     }
 
     account.ID = uuid.New()
     account.AccountNumber = utils.GenerateAccountNumber(10)
-    err := db.Create(&account).Error
-
-    if err != nil {
+    
+    if err := db.Create(&account).Error; err != nil {
         return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Unable to create account", "data": err})
+    }
+
+    if err := db.Find(&account, "account_number = ?", account.AccountNumber).Error; err == nil {
+        return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Account already exists", "data": err})
     }
 
     return c.JSON(fiber.Map{"status": "success", "message": "Account Created", "data": account})

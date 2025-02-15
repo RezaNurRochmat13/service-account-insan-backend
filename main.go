@@ -1,8 +1,8 @@
 package main
 
 import (
-	"golang-boilerplate-example/database"
-	"golang-boilerplate-example/routes"
+	"insan-service-account-backend/database"
+	"insan-service-account-backend/routes"
 
 	"github.com/gofiber/fiber/v2"
 )

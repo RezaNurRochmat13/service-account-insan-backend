@@ -8,7 +8,7 @@ import (
 type Account struct {
 	gorm.Model
 	ID uuid.UUID `gorm:"type:uuid"`
-	User User `json:"user"`
+	UserID uuid.UUID   `gorm:"unique;not null"` // Foreign key
 	AccountNumber string `json:"account_number"`
 	Balance string `json:"balance"`
 }
