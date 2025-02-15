@@ -2,14 +2,17 @@ package routes
 
 import (
 	accountRoutes "insan-service-account-backend/module/account/routes"
+	transactionRoutes "insan-service-account-backend/module/transaction/routes"
 	userRoutes "insan-service-account-backend/module/user/routes"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 func SetupRoutes(app *fiber.App) {
-	api := app.Group("/api/v1")
+	apiGroup := app.Group("/api/v1")
 
-	userRoutes.SetupUserRoutes(api)
-	accountRoutes.SetupAccountRoutes(api)
+	// Register routes
+	userRoutes.SetupUserRoutes(apiGroup)
+	accountRoutes.SetupAccountRoutes(apiGroup)
+	transactionRoutes.SetupTransactionRoutes(apiGroup)
 }
