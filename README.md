@@ -9,7 +9,7 @@ Installation instructions go here.
 ```bash
 - Clone this repository
 - Go to the project directory
-- Go to folder `infra` and run `docker-compose up`
+- Run `docker-compose up -d`
 - Go to root folder and run `go run .`
 ```
 
