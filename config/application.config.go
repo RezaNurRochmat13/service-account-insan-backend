@@ -8,8 +8,8 @@ import (
 )
 
 func Config(key string) string {
-	// Load .env file
 	err := godotenv.Load(".env")
+
 	if err != nil {
 		fmt.Printf("Error loading .env file: %v\n", err)
 	}

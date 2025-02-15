@@ -1,6 +1,6 @@
-# Golang Boilerplate Example
+# Service Account Backend
 
-This is a Golang Boilerplate Example
+This is a Service Account Backend Assignment of Insan Solusi.
 
 ## Installation
 
@@ -9,7 +9,8 @@ Installation instructions go here.
 ```bash
 - Clone this repository
 - Go to the project directory
-- Run `go run`
+- Go to folder `infra` and run `docker-compose up`
+- Go to root folder and run `go run .`
 ```
 
 ## Usage
@@ -18,7 +19,7 @@ Usage instructions go here.
 
 ```bash
 - Go to the project directory
-- Run `go run`
+- Run `go run .`
 ```
 
 ## Technology Stack
@@ -40,8 +41,9 @@ Architecture goes here.
 ```bash
 - config => Config package for environment variables
 - database => Database package for database connection
-- module => Module package for application logic
+- module => Module package for application modules
 - routes => Router package for API routes
+- utils => Utils package for utility functions
 - infra => Infrastructure package for Docker and Docker Compose
 ```
 
