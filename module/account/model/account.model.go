@@ -10,5 +10,5 @@ type Account struct {
 	ID uuid.UUID `gorm:"type:uuid"`
 	UserID uuid.UUID   `gorm:"unique;not null"` // Foreign key
 	AccountNumber string `json:"account_number"`
-	Balance string `json:"balance"`
+	Balance int `json:"balance"`
 }
